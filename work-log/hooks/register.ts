@@ -50,6 +50,7 @@ export const register: Register = (on, options) => {
 
   // No matcher: this counts every tool, so it sees every call. It reads the
   // name and the outcome only, never a tool's arguments.
+  // To leave subagents out of the main turn's tally: if (e.agentId !== undefined) return r
   on('tool.call', async ($, e, next) => {
     const r = await next(e)
     const turn = current === null ? undefined : turns.get(current)
@@ -79,6 +80,8 @@ export const register: Register = (on, options) => {
     return r
   }).catch(($, e, next) => (next.called ? undefined : next(e)))
 
+  // The engine prefixes this plugin's name to the text, so the text must not
+  // repeat it (see the third proof in section 5).
   on('command.run', { command: 'worklog' }, async $ => {
     const path = `${dir}/${dayOf(Date.now())}.md`
     if (dir === '' || !(await $.fs.exists(path))) return { text: `no log yet (${path})` }
