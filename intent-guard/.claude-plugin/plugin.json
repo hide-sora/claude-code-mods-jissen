@@ -1,0 +1,7 @@
+{
+  "name": "intent-guard",
+  "version": "0.1.0",
+  "description": "Sends risky-looking Bash commands to an LLM judge and denies the ones it reads as destructive; regex only decides what is worth judging. Fails closed. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

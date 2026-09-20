@@ -1,0 +1,16 @@
+{
+  "name": "work-log",
+  "version": "0.1.0",
+  "description": "A daily work log written by itself: turn.start remembers the prompt, tool.call counts the tools it used, and turn.complete appends one Markdown line per turn to <logDir>/YYYY-MM-DD.md. /worklog prints today's file. Reads no tool arguments, only the tool names. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT",
+  "userConfig": {
+    "logDir": {
+      "type": "string",
+      "title": "Work log directory",
+      "description": "Absolute path the daily YYYY-MM-DD.md files are written to. Left empty, the plugin writes into a worklog/ folder inside its own directory.",
+      "required": false,
+      "default": ""
+    }
+  }
+}

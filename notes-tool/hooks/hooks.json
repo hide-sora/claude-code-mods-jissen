@@ -1,0 +1,4 @@
+{
+  "description": "notes-tool: session.start, tool.call{tool=mcp__notes-tool__note_add|note_list}, command.run{command=notes}. Needs CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1; builds without function hooks ignore the modules key.",
+  "modules": ["./register.ts"]
+}

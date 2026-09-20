@@ -1,0 +1,7 @@
+{
+  "name": "model-router",
+  "version": "0.1.0",
+  "description": "Routes each model request from turn.step: subagent steps to haiku, a short first prompt to low effort, and /route <model|auto> to pin the main loop. Writes every decision to PROOF-steps.log. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

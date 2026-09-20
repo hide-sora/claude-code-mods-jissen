@@ -1,0 +1,4 @@
+{
+  "description": "usage-watch: session.start (reads $.session.usage once), session.measure (status line, rising-edge toasts, proof log). Needs CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1; builds without function hooks ignore the modules key.",
+  "modules": ["./register.ts"]
+}

@@ -1,0 +1,4 @@
+{
+  "description": "work-log: session.start (registers /worklog), turn.start, tool.call (every tool, name only), turn.complete (appends the turn's line), command.run{command=worklog}. Needs CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1; builds without function hooks ignore the modules key.",
+  "modules": ["./register.ts"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "usage-watch",
+  "version": "0.1.0",
+  "description": "A status line of the session's usage and a warning when a plan window fills: session.measure pins `ctx 42% | 5h 61% | 7d 18% | $0.42` with $.ui.status and toasts once each time a rate-limit window rises past 80% or 90%. Writes two proof files under its own directory. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "secret-scrub",
+  "version": "0.1.0",
+  "description": "Masks API keys, AWS/GitHub/Slack tokens, PEM private keys and Bearer values in Read, Grep and Bash results before the model reads them. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

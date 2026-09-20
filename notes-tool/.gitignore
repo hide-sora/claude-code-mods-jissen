@@ -1,0 +1,4 @@
+.claude/types/
+node_modules/
+debug*.log
+PROOF*

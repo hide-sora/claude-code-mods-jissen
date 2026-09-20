@@ -1,0 +1,7 @@
+{
+  "name": "notes-tool",
+  "version": "0.1.0",
+  "description": "Two tools for the model, note_add and note_list, and /notes for the person, all backed by the plugin's own store so the notes outlive the session. Needs function hooks (early access).",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

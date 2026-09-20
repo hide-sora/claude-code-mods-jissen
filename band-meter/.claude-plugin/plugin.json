@@ -1,0 +1,7 @@
+{
+  "name": "band-meter",
+  "version": "0.1.0",
+  "description": "Draws one row above the prompt: context fill, rate-limit windows and session cost.",
+  "author": { "name": "hide-sora" },
+  "license": "MIT"
+}

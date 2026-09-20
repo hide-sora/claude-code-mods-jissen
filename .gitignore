@@ -1,0 +1,12 @@
+node_modules/
+.claude/types/
+debug*.log
+dbg-*.log
+PROOF*
+worklog/
+custom-log/
+proof-settings.json
+_badshapes/
+victims/
+tmp-*
+fixtures/*.bak
