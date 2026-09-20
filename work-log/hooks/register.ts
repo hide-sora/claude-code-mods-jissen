@@ -81,7 +81,7 @@ export const register: Register = (on, options) => {
 
   on('command.run', { command: 'worklog' }, async $ => {
     const path = `${dir}/${dayOf(Date.now())}.md`
-    if (dir === '' || !(await $.fs.exists(path))) return { text: `work-log: no log yet (${path})` }
+    if (dir === '' || !(await $.fs.exists(path))) return { text: `no log yet (${path})` }
     return { text: await $.fs.read(path) }
-  }).catch(($, e, next) => (next.called ? undefined : { text: 'work-log: could not read the log' }))
+  }).catch(($, e, next) => (next.called ? undefined : { text: 'could not read the log' }))
 }

@@ -65,7 +65,7 @@ describe('register', () => {
 
     await $.session.start(session)
     const empty = await $.command.run(run)
-    expect(empty.text).toContain('work-log: no log yet')
+    expect(empty.text).toContain('no log yet')
 
     await $.turn.start(start)
     await $.turn.complete(complete)
