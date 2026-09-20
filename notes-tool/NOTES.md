@@ -232,3 +232,7 @@ rejects past 4 MiB of JSON text.
   names worked on the first attempt, the store persisted across processes
   without any extra flag, and no `hook failed:` line appeared in either debug
   log (`grep -nE "hook failed" debug.log debug2.log` → no matches).
+
+## Addendum (2026-09-21): `/notes` and `claude -p`
+
+The "`claude -p` does not run slash commands" statement in §7 was a Git Bash (MSYS) artifact: `/notes` reached `claude` as `C:/Program Files/Git/notes`. With `MSYS_NO_PATHCONV=1`, `-p` dispatches plugin-registered commands and `command.run` fires (proven with work-log; see `../_docs/slash-commands-in-p.md`). `/notes` itself was not re-run headlessly; its proof remains the test kit.
