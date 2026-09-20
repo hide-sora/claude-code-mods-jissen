@@ -1,1 +1,4 @@
-{ "modules": ["./register.ts"] }
+{
+  "description": "hello-guard: session.start と tool.call{Bash} をフック。CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 が必要",
+  "modules": ["./register.ts"]
+}

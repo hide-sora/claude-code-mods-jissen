@@ -7,8 +7,7 @@ const KEY = 'notes'
 
 type Note = { text: string; at: string }
 
-const read = async (raw: unknown): Promise<Note[]> =>
-  Array.isArray(raw) ? (raw as Note[]) : []
+const read = (raw: unknown): Note[] => (Array.isArray(raw) ? (raw as Note[]) : [])
 
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
@@ -39,20 +38,20 @@ export const register: Register = on => {
   on('tool.call', { tool: 'mcp__notes-tool__note_add' }, async ($, e) => {
     const text = String(e.text ?? '').trim()
     if (text === '') return { deny: 'note_add needs a non-empty text' }
-    const notes = await read(await $.store.get(KEY))
+    const notes = read(await $.store.get(KEY))
     notes.push({ text, at: new Date().toISOString() })
     await $.store.set(KEY, notes)
     return { result: `saved note ${notes.length}: ${text}` }
   })
 
   on('tool.call', { tool: 'mcp__notes-tool__note_list' }, async ($, e) => {
-    const notes = await read(await $.store.get(KEY))
+    const notes = read(await $.store.get(KEY))
     if (notes.length === 0) return { result: 'no notes saved yet' }
     return { result: notes.map((n, i) => `${i + 1}. ${n.text}`).join('\n') }
   })
 
   on('command.run', { command: 'notes' }, async ($, e) => {
-    const notes = await read(await $.store.get(KEY))
+    const notes = read(await $.store.get(KEY))
     return {
       text:
         notes.length === 0

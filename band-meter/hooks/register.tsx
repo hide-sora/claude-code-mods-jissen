@@ -31,7 +31,7 @@ const meter = {
 // Whether the row is drawn; `/meter` toggles it and $.store remembers it.
 let shown = true
 
-/** `ctx ████░░░░ 42%  5h 61%  7d 18%  $0.42` */
+/** `ctx ███░░░░░ 42%  5h 61%  7d 18%  $0.42` (42% → round(42/100*8) = 3 cells) */
 function line(): string {
   const parts = [
     `ctx ${bar(meter.context)} ${asPercent(meter.context)}`,
@@ -64,7 +64,7 @@ export const register: Register = on => {
   })
 
   // `/meter`: no core command answers this name, so the hook answers alone.
-  on('command.run', { command: 'meter' }, async ($, e, next) => {
+  on('command.run', { command: 'meter' }, async $ => {
     shown = !shown
     await $.store.set('shown', shown)
     $.ui.invalidate('ui.render')

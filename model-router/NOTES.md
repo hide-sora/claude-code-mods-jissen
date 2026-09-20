@@ -309,3 +309,7 @@ trace=jev-model-router/user:returned > engine/core:returned
   resolved id.
 - **Proving `effort` reached the API** — no artifact carries it. Left unproven
   on purpose rather than claimed.
+
+## 10. Addendum (2026-09-21): §8-3 and §9 were wrong about `claude -p` and slash commands
+
+The "`claude -p` does not run slash commands" finding above was an artifact of Git Bash (MSYS) argument conversion: `/route sonnet` reached `claude` as `C:/Program Files/Git/route sonnet`, an ordinary prompt. With `MSYS_NO_PATHCONV=1` (or `//route`), `-p` **does** dispatch a plugin-registered command and its `command.run` hook fires (`work-log (user) answered command.run without next() in 1.7ms`). Built-in commands (`/cost`) dispatch too but raise no `command.run`; `/help` is refused headlessly. Seven-run evidence: `../_docs/slash-commands-in-p.md`. The test-kit proof of rule 3 stands as written.

@@ -1,5 +1,9 @@
 {
-  "name": "hello-mod",
+  "name": "hello-guard",
   "version": "0.1.0",
-  "description": "Minimal function-hooks mod used to verify the harness"
+  "description": "起動を記録し、rm -rf / を含む Bash を拒否する。関数フック（early access）が必要",
+  "author": {
+    "name": "hide-sora"
+  },
+  "license": "MIT"
 }
